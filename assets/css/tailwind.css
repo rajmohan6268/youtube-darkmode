@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-dark {
+  background: #212121;
+}
+.bg-dark-0{
+  background: #181818;
+}
+.bg-dark-1 {
+  background: #121212;
+}
+.bg-gray {
+  background: #303030;
+}
+
+.bg-red {
+  background: #cc0000;
+}
+
+.text-gray {
+  color: #aaaaaa;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

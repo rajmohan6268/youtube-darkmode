@@ -1,5 +1,5 @@
 <template>
-  <div class="font-Inter ">
+  <div class="min-h-screen text-white font-Inter bg-dark">
     <Nuxt />
   </div>
 </template>
