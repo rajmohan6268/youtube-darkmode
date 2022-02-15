@@ -5,7 +5,7 @@
     >
       <img src="/home.svg" class="" alt="">
       <div class="pt-0.5">
-        <n-link to="/chanel">
+        <n-link to="/">
           Home
         </n-link>
       </div>
