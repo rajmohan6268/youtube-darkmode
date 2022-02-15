@@ -12,19 +12,19 @@
     </div>
     <div class="flex items-center justify-center w-full -ml-10 space-x-6">
       <div
-        class="flex items-center w-full max-w-lg border border-white rounded border-opacity-10"
+        class="flex items-center w-full max-w-lg border border-white rounded border-opacity-5"
       >
         <input
           type="text"
-          class="w-full py-2.5 pl-8 bg-dark-1 focus:outline-none"
+          class="w-full py-2 pl-8 bg-dark-1 focus:outline-none"
           placeholder="Search"
         >
-        <div class="px-5 py-2.5 bg-gray">
-          <img class="w-8" src="/Group.svg">
+        <div class="px-5 py-2 bg-gray">
+          <img class="w-7" src="/Group.svg">
         </div>
       </div>
       <div class="p-2.5 bg-black rounded-full">
-        <img class="w-8" src="/mic.svg" alt="">
+        <img class="w-6" src="/mic.svg" alt="">
       </div>
     </div>
     <div class="flex items-center pr-10 space-x-5">
