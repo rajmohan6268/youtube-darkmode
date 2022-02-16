@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col flex-shrink-0 w-56">
+  <div class="flex flex-col flex-shrink-0 ">
     <div
-      class="p-2.5 w-full bg-white bg-opacity-10 flex items-center space-x-3"
+      class="p-2.5 w-full bg-white bg-opacity-10  flex items-center space-x-3"
     >
       <img src="/home.svg" class="" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5 ">
         <n-link to="/">
           Home
         </n-link>
@@ -12,7 +12,7 @@
     </div>
     <div class="p-2.5 w-full  flex items-center space-x-3">
       <img src="/explorer.svg" class="" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5">
         <n-link to="/chanel">
           Explore
         </n-link>
@@ -20,7 +20,7 @@
     </div>
     <div class="p-2.5 w-full  flex items-center space-x-3">
       <img src="/subscription.svg" class="" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5">
         <n-link to="/chanel">
           Subscriptions
         </n-link>
@@ -31,11 +31,11 @@
 
     <div
       v-for="(i, index) in menu_list"
-      :key="index"
+      :key="index + 5000"
       class="p-2.5 w-full flex items-center space-x-3"
     >
       <img :src="i.icon" class="" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5">
         <n-link to="/chanel">
           {{ i.name }}
         </n-link>
@@ -43,32 +43,38 @@
     </div>
     <div class="w-full border-b border-white border-opacity-10" />
 
-    <div class="py-2 font-semibold text-white text-opacity-40 pl-2.5">
+    <div
+      v-if="isOpen"
+      class="py-2 font-semibold text-white text-opacity-40 pl-2.5"
+    >
       SUBSCRIPTIONS
     </div>
     <div
       v-for="(i, index) in SUBSCRIPTIONS"
-      :key="index"
+      :key="index + 1000"
       class="p-2.5 w-full flex items-center space-x-3"
     >
       <img :src="i.avatar" class="rounded-full" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5">
         <n-link to="/chanel">
           {{ i.name }}
         </n-link>
       </div>
     </div>
     <div class="w-full border-b border-white border-opacity-10" />
-    <div class="py-2 font-semibold text-white text-opacity-40 pl-2.5">
+    <div
+      v-if="isOpen"
+      class="py-2 font-semibold text-white text-opacity-40 pl-2.5 pr-4"
+    >
       MORE FROM YOUTUBE
     </div>
     <div
       v-for="(i, index) in MORE_FROM_YOUTUBE"
-      :key="index"
+      :key="index + 100"
       class="p-2.5 w-full flex items-center space-x-3"
     >
       <img :src="i.avatar" class="" alt="">
-      <div class="pt-0.5">
+      <div v-if="isOpen" class="pt-0.5">
         {{ i.name }}
       </div>
     </div>
@@ -161,8 +167,15 @@ export default {
           name: 'Live',
           avatar: '/live.svg'
         }
-      ]
+      ],
+      isOpen: true
     }
+  },
+  created () {
+    this.$nuxt.$on('toggle', (event) => {
+      console.log('toggle sidebar', this.isOpen)
+      this.isOpen = !this.isOpen
+    })
   },
   methods: {}
 }

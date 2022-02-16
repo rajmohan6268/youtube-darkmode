@@ -1,9 +1,12 @@
 <template>
   <div class="flex items-center justify-between p-3 bg-dark ">
     <div class="flex items-center space-x-4">
-      <div class="">
+      <button
+        class=""
+        @click="$nuxt.$emit('toggle', { toggle: true })"
+      >
         <img class="w-8" src="/hamburger.svg" alt="">
-      </div>
+      </button>
       <div class="">
         <n-link to="/">
           <img class="w-28" src="/logo-yt.png" alt="">
